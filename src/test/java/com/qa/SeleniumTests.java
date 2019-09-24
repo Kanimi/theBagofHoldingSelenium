@@ -84,6 +84,28 @@ public class SeleniumTests {
         loginbutton.click();
         Thread.sleep(2000);
     }
+
+    @Test
+    public void homeTest() throws InterruptedException, IOException {
+        driver.get("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingFrontEnd\\FrontEnd\\home.html");
+        Thread.sleep(2000);
+        WebElement nav = driver.findElementByXPath("/html/body/div/header/div/nav/a[2]");
+        nav.click();
+        Thread.sleep(2000);
+        WebElement nav2 = driver.findElementByXPath("/html/body/div/header/div/nav/a[1]");
+        nav2.click();
+        Thread.sleep(2000);
+        WebElement button = driver.findElementByXPath("/html/body/div/main/p[2]/a");
+        button.click();
+        Thread.sleep(2000);
+        driver.navigate().back();
+        Thread.sleep(2000);
+        WebElement profile = driver.findElementByXPath("/html/body/div/footer/div/p/a");
+        profile.click();
+        Thread.sleep(2000);
+        driver.navigate().back();
+        Thread.sleep(2000);
+    }
 }
 
 //    @Test
