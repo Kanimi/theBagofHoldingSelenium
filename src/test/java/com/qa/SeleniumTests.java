@@ -5,13 +5,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.support.ui.Select;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
-import static org.junit.Assert.assertEquals;
 
 public class SeleniumTests {
 
@@ -30,10 +26,50 @@ public class SeleniumTests {
     }
 
     @Test
-    public void loginForm() throws InterruptedException {
+    public void showcase() throws InterruptedException, IOException {
         driver.get("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingFrontEnd\\FrontEnd\\index.html");
         Thread.sleep(2000);
+        WebElement registerlink = driver.findElementById("registerlink");
+        registerlink.click();
+    }
 
+    @Test
+    public void registerForm() throws InterruptedException, IOException {
+        driver.get("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingFrontEnd\\FrontEnd\\register.html");
+        Thread.sleep(2000);
+        WebElement username = driver.findElementById("username");
+        Thread.sleep(200);
+        username.click();
+        username.sendKeys("admin");
+        WebElement password = driver.findElementById("password");
+        Thread.sleep(200);
+        password.click();
+        password.sendKeys("password");
+        Thread.sleep(200);
+        WebElement password2 = driver.findElementById("repeatpassword");
+        password2.click();
+        password2.sendKeys("password");
+        Thread.sleep(200);
+        WebElement email = driver.findElementById("email");
+        email.click();
+        email.sendKeys("Karolina.Dudek@academytrainee.com");
+        Thread.sleep(200);
+        WebElement email2 = driver.findElementById("confirmemail");
+        email2.click();
+        email2.sendKeys("Karolina.Dudek@academytrainee.com");
+        Thread.sleep(2000);
+        File registerformss = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileHandler.copy(registerformss, new File("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingSelenium\\src\\test\\java\\screenshots\\registrationFormTest.png"));
+        WebElement registerbutton = driver.findElementById("registerButton");
+        registerbutton.click();
+        Thread.sleep(2000);
+        //loop doesn't work here as it's mixed 50/50 fields of password and text type
+    }
+
+    @Test
+    public void loginForm() throws InterruptedException, IOException {
+        driver.get("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingFrontEnd\\FrontEnd\\index.html");
+        Thread.sleep(2000);
 
     }
 }
