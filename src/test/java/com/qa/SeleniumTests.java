@@ -70,7 +70,19 @@ public class SeleniumTests {
     public void loginForm() throws InterruptedException, IOException {
         driver.get("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingFrontEnd\\FrontEnd\\index.html");
         Thread.sleep(2000);
-
+        WebElement username = driver.findElementById("username");
+        WebElement password = driver.findElementById("password");
+        username.click();
+        username.sendKeys("admin");
+        Thread.sleep(200);
+        password.click();
+        password.sendKeys("password");
+        Thread.sleep(2000);
+        File loginformss = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileHandler.copy(loginformss, new File("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingSelenium\\src\\test\\java\\screenshots\\loginFormTest.png"));
+        WebElement loginbutton = driver.findElementByXPath("/html/body/div/div[2]/input");
+        loginbutton.click();
+        Thread.sleep(2000);
     }
 }
 
