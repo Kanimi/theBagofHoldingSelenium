@@ -6,8 +6,13 @@ import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.Select;
+
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 public class SeleniumTests {
 
@@ -86,7 +91,7 @@ public class SeleniumTests {
     }
 
     @Test
-    public void homeTest() throws InterruptedException, IOException {
+    public void homeTest() throws InterruptedException {
         driver.get("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingFrontEnd\\FrontEnd\\home.html");
         Thread.sleep(2000);
         WebElement nav = driver.findElementByXPath("/html/body/div/header/div/nav/a[2]");
@@ -105,6 +110,32 @@ public class SeleniumTests {
         Thread.sleep(2000);
         driver.navigate().back();
         Thread.sleep(2000);
+    }
+
+    @Test
+    public void addDice() throws InterruptedException, IOException {
+        driver.get("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingFrontEnd\\FrontEnd\\dashboard.html");
+        Thread.sleep(2000);
+        WebElement addbutton = driver.findElementByXPath("/html/body/div/div[2]/table[1]/tbody/tr/td[5]/input");
+        WebElement amount = driver.findElementByXPath("//*[@id=\"amount\"]");
+        WebElement colour = driver.findElementByXPath("/html/body/div/div[2]/table[1]/tbody/tr/td[2]/select");
+        WebElement material = driver.findElementByXPath("/html/body/div/div[2]/table[1]/tbody/tr/td[3]/select");
+        WebElement type = driver.findElementByXPath("/html/body/div/div[2]/table[1]/tbody/tr/td[4]/select");
+        amount.click();
+        amount.sendKeys(Keys.ARROW_DOWN, "-=+.e1234567890");
+        Thread.sleep(200);
+        colour.click();
+        new Select(driver.findElementByXPath("/html/body/div/div[2]/table[1]/tbody/tr/td[2]/select")).selectByIndex(5);
+        Thread.sleep(200);
+        material.click();
+        new Select(driver.findElementByXPath("/html/body/div/div[2]/table[1]/tbody/tr/td[3]/select")).selectByIndex(5);
+        Thread.sleep(200);
+        type.click();
+        new Select(driver.findElementByXPath("/html/body/div/div[2]/table[1]/tbody/tr/td[4]/select")).selectByIndex(9);
+        Thread.sleep(2000);
+        File addss = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileHandler.copy(addss, new File("C:\\Users\\kanim\\Dropbox\\Programming\\theBagofHoldingSelenium\\src\\test\\java\\screenshots\\addDiceTest.png"));
+        addbutton.click();
     }
 }
 
