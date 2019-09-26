@@ -23,4 +23,4 @@ Added Dice (ID 12)
 Updated Dice (ID 1)
 
 ![Delete Test](src/test/java/screenshots/deleteDiceTest.png "Delete Dice Test")
-Removed Diice (ID 1)
+Removed Dice (ID 1)
