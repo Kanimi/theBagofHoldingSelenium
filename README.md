@@ -22,4 +22,4 @@ Selenium tests for <https://github.com/Kanimi/theBagofHoldingBackEnd>
 ### Dashboard Tests
 ![Add Test](/screenshots/addDiceTest.png "Add Dice Test")
 ![Update_Test](/screenshots/updateDiceTest.png "Update Dice Test")
-![Delete_Test](/screenshots/deleteDiceTest.png "Delete Dice Test")
+![Delete_Test](src/test/java/screenshots/deleteDiceTest.png "Delete Dice Test")
