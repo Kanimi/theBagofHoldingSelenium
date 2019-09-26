@@ -11,15 +11,15 @@ Selenium tests for <https://github.com/Kanimi/theBagofHoldingBackEnd>
 *Please click on the pictures to view full resolution.*
 
 ### Register Test
-![Register_Test](/screenshots/registerFormTest.png "Register Test")
+![Register_Test](src/test/java/screenshots/registerFormTest.png "Register Test")
 
 ### Login Test
-![Login Test](/screenshots/loginFormTest.png "Login Test")
+![Login Test](src/test/java/screenshots/loginFormTest.png "Login Test")
 
 ### Home Test
-![Home Test](/screenshots/Home_Test.png "Home Test")
+![Home Test](src/test/java/screenshots/Home_Test.png "Home Test")
 
 ### Dashboard Tests
-![Add Test](/screenshots/addDiceTest.png "Add Dice Test")
-![Update_Test](/screenshots/updateDiceTest.png "Update Dice Test")
+![Add Test](src/test/java/screenshots/addDiceTest.png "Add Dice Test")
+![Update_Test](src/test/java/screenshots/updateDiceTest.png "Update Dice Test")
 ![Delete_Test](src/test/java/screenshots/deleteDiceTest.png "Delete Dice Test")
