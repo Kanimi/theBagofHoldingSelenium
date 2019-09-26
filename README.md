@@ -16,6 +16,9 @@
 ![Login Test](src/test/java/screenshots/loginFormTest.png "Login Test")
 
 ### Dashboard Tests
+Added Dice (ID 12)
 ![Add Test](src/test/java/screenshots/addDiceTest.png "Add Dice Test")
+Updated Dice (ID 1)
 ![Update Test](src/test/java/screenshots/updateDiceTest.png "Update Dice Test")
+Removed Diice (ID 1)
 ![Delete Test](src/test/java/screenshots/deleteDiceTest.png "Delete Dice Test")
